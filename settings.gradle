@@ -1,0 +1,6 @@
+rootProject.name='ppjock'
+include ':app'
+include ':libcommon'
+include ':libnetwork'
+include ':libnavannotation'
+include ':libnavcompiler'
