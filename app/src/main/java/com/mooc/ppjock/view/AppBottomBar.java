@@ -29,6 +29,7 @@ public class AppBottomBar extends BottomNavigationView {
     }
 
     public AppBottomBar(Context context, AttributeSet attrs) {
+
         this(context, attrs, 0);
     }
 
