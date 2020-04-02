@@ -75,6 +75,7 @@ public class PPImageView extends AppCompatImageView {
                     int intrinsicHeight = resource.getIntrinsicHeight();
 
                     setSize(intrinsicWidth,intrinsicHeight,marginLeft,maxWidth,maxHeight);
+                    //TODO
                 }
             });
         }
