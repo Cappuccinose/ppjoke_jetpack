@@ -38,6 +38,8 @@ public class PPImageView extends AppCompatImageView {
         ViewHelper.setViewOutline(this,attrs,defStyleAttr,0);
     }
 
+
+
     @BindingAdapter(value = {"image_url","isCircle","radius"},requireAll = false)
     public static void setImageUrl(PPImageView view,String imageUrl,boolean isCircle,int radius){
         RequestBuilder<Drawable> builder = Glide.with(view).load(imageUrl);
@@ -71,14 +73,16 @@ public class PPImageView extends AppCompatImageView {
             Glide.with(this).load(imageUrl).into(new SimpleTarget<Drawable>() {
                 @Override
                 public void onResourceReady(@NonNull Drawable resource, @Nullable Transition<? super Drawable> transition) {
-                    int intrinsicWidth = resource.getIntrinsicWidth();
-                    int intrinsicHeight = resource.getIntrinsicHeight();
-
-                    setSize(intrinsicWidth,intrinsicHeight,marginLeft,maxWidth,maxHeight);
-                    //TODO
+                    int width = resource.getIntrinsicWidth();
+                    int height = resource.getIntrinsicHeight();
+                    setSize(width,height,marginLeft,maxWidth,maxHeight);
+                    setImageDrawable(resource);
                 }
             });
+            return;
         }
+        setSize(widthPx,heightPx,marginLeft,maxWidth,maxHeight);
+        setImageUrl(this,imageUrl,false);
     }
 
     private void setSize(int width, int height, int marginLeft, int maxWidth, int maxHeight) {
