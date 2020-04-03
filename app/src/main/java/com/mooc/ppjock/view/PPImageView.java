@@ -38,7 +38,10 @@ public class PPImageView extends AppCompatImageView {
         ViewHelper.setViewOutline(this,attrs,defStyleAttr,0);
     }
 
-
+    @BindingAdapter(value = {"image_url","isCircle"})
+    public static void setImageUrl(PPImageView view,String imageUrl,boolean isCircle){
+        view.setImageUrl(view,imageUrl,isCircle,0);
+    }
 
     @BindingAdapter(value = {"image_url","isCircle","radius"},requireAll = false)
     public static void setImageUrl(PPImageView view,String imageUrl,boolean isCircle,int radius){
