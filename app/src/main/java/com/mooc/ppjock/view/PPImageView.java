@@ -108,7 +108,4 @@ public class PPImageView extends AppCompatImageView {
         }
         setLayoutParams(params);
     }
-
-
-
 }
