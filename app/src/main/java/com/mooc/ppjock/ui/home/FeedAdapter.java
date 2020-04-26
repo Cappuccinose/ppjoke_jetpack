@@ -28,7 +28,6 @@ public class FeedAdapter extends AbsPagedListAdapter<Feed,FeedAdapter.ViewHolder
     }
 
 
-
     public class ViewHolder extends RecyclerView.ViewHolder{
 
         public ViewHolder(@NonNull View itemView) {
