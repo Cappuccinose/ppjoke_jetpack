@@ -62,9 +62,6 @@ public abstract class AbsListFragment<T,M extends AbsViewModel<T>> extends Fragm
         mDecoration.setDrawable(ContextCompat.getDrawable(getContext(),R.drawable.list_divider));
         mRecyclerView.addItemDecoration(mDecoration);
 
-
-
-
         return binding.getRoot();
     }
 
