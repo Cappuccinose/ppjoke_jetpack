@@ -74,7 +74,6 @@ public abstract class AbsListFragment<T,M extends AbsViewModel<T>> extends Fragm
         if (arguments.length > 1){
             Type argument = arguments[1];
             Class aClass = ((Class) argument).asSubclass(AbsViewModel.class);
-
             mViewModel1 = ViewModelProviders.of(this).get(aClass);
 
         }
