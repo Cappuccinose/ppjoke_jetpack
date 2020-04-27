@@ -12,7 +12,6 @@ import com.mooc.ppjock.model.Feed;
 
 public class FeedAdapter extends AbsPagedListAdapter<Feed,FeedAdapter.ViewHolder> {
 
-
     protected FeedAdapter(@NonNull DiffUtil.ItemCallback<Feed> diffCallback) {
         super(diffCallback);
     }
@@ -27,12 +26,10 @@ public class FeedAdapter extends AbsPagedListAdapter<Feed,FeedAdapter.ViewHolder
 
     }
 
-
     public class ViewHolder extends RecyclerView.ViewHolder{
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
         }
     }
-
 }
