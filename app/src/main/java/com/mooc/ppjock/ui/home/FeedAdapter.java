@@ -38,6 +38,17 @@ public class FeedAdapter extends AbsPagedListAdapter<Feed,FeedAdapter.ViewHolder
     }
 
     @Override
+    protected int getItemViewType2(int position) {
+        Feed feed = getItem(position);
+        if (feed.itemType == Feed.TYPE_IMAGE_TEXT){
+
+        }else if (feed.itemType == Feed.TYPE_VIDEO){
+
+        }
+        return super.getItemViewType2(position);
+    }
+
+    @Override
     protected FeedAdapter.ViewHolder onCreateViewHolder2(ViewGroup parent, int viewType) {
         return null;
     }
