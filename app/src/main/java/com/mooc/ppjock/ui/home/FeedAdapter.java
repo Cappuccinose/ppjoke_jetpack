@@ -6,10 +6,13 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
+import androidx.databinding.DataBindingUtil;
+import androidx.databinding.ViewDataBinding;
 import androidx.recyclerview.widget.DiffUtil;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.mooc.libcommon.extention.AbsPagedListAdapter;
+import com.mooc.ppjock.R;
 import com.mooc.ppjock.model.Feed;
 
 public class FeedAdapter extends AbsPagedListAdapter<Feed,FeedAdapter.ViewHolder> {
@@ -41,16 +44,17 @@ public class FeedAdapter extends AbsPagedListAdapter<Feed,FeedAdapter.ViewHolder
     protected int getItemViewType2(int position) {
         Feed feed = getItem(position);
         if (feed.itemType == Feed.TYPE_IMAGE_TEXT){
-
+            return R.layout.layout_feed_type_image;
         }else if (feed.itemType == Feed.TYPE_VIDEO){
-
+            return R.layout.layout_feed_type_video;
         }
-        return super.getItemViewType2(position);
+        return 0;
     }
 
     @Override
     protected FeedAdapter.ViewHolder onCreateViewHolder2(ViewGroup parent, int viewType) {
-        return null;
+        ViewDataBinding binding = DataBindingUtil.inflate(inflater, viewType, parent, false);
+        return new ViewHolder(binding.getRoot(),binding);
     }
 
     @Override
@@ -58,7 +62,7 @@ public class FeedAdapter extends AbsPagedListAdapter<Feed,FeedAdapter.ViewHolder
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder{
-        public ViewHolder(@NonNull View itemView) {
+        public ViewHolder(@NonNull View itemView,ViewDataBinding binding) {
             super(itemView);
         }
     }
