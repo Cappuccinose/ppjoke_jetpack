@@ -1,5 +1,7 @@
 package com.mooc.ppjock.ui.home;
 
+import android.content.Context;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
@@ -12,8 +14,27 @@ import com.mooc.ppjock.model.Feed;
 
 public class FeedAdapter extends AbsPagedListAdapter<Feed,FeedAdapter.ViewHolder> {
 
-    protected FeedAdapter(@NonNull DiffUtil.ItemCallback<Feed> diffCallback) {
-        super(diffCallback);
+    private final String mCategory;
+    private Context mContext;
+    private final LayoutInflater inflater;
+
+    protected FeedAdapter(Context context, String category) {
+        super(new DiffUtil.ItemCallback<Feed>() {
+            @Override
+            public boolean areItemsTheSame(@NonNull Feed oldItem, @NonNull Feed newItem) {
+                return oldItem.id == newItem.id;
+            }
+
+            @Override
+            public boolean areContentsTheSame(@NonNull Feed oldItem, @NonNull Feed newItem) {
+                return oldItem.equals(newItem);
+            }
+        });
+
+        inflater = LayoutInflater.from(mContext);
+        mContext = context;
+        mCategory = category;
+
     }
 
     @Override
