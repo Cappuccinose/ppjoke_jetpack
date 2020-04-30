@@ -59,6 +59,7 @@ public class FeedAdapter extends AbsPagedListAdapter<Feed,FeedAdapter.ViewHolder
 
     @Override
     protected void onBindViewHolder2(FeedAdapter.ViewHolder holder, int position) {
+
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder{
