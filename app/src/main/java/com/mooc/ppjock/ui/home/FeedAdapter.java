@@ -59,12 +59,24 @@ public class FeedAdapter extends AbsPagedListAdapter<Feed,FeedAdapter.ViewHolder
 
     @Override
     protected void onBindViewHolder2(FeedAdapter.ViewHolder holder, int position) {
+        Feed feed = getItem(position);
+        holder.bindData(feed);
+
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
 
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder{
         public ViewHolder(@NonNull View itemView,ViewDataBinding binding) {
             super(itemView);
+        }
+
+        public void bindData(Feed feed) {
         }
     }
 }
