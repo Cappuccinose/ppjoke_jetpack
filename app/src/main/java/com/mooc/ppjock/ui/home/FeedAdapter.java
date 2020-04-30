@@ -65,7 +65,7 @@ public class FeedAdapter extends AbsPagedListAdapter<Feed,FeedAdapter.ViewHolder
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+//                FeedDetailActivity
             }
         });
 
