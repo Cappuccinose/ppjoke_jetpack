@@ -2,12 +2,11 @@ package com.mooc.ppjock.ui.detail;
 
 import android.content.Context;
 
+import androidx.fragment.app.FragmentActivity;
+
 public class VideoViewHandler extends ViewHandler {
 
-    private final Context mContext;
-
-    public VideoViewHandler(Context context) {
-
-        this.mContext = context;
+    public VideoViewHandler(FragmentActivity activity) {
+        super(activity);
     }
 }
