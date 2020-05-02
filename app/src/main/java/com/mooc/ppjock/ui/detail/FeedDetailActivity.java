@@ -12,6 +12,7 @@ import java.io.Serializable;
 public class FeedDetailActivity extends AppCompatActivity {
     private static final String KEY_FEED = "key_feed";
     public static final String KEY_CATEGORY = "key_category";
+    private ViewHandler viewHandler = null;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -23,9 +24,9 @@ public class FeedDetailActivity extends AppCompatActivity {
         }
 
         if (feed.itemType == Feed.TYPE_IMAGE_TEXT){
-
+            viewHandler = new ImageViewHandler(this);
         }else {
-
+            viewHandler = new VideoViewHandler(this);
         }
     }
 
