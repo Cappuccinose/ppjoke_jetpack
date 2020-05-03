@@ -22,7 +22,6 @@ public class FeedDetailActivity extends AppCompatActivity {
             finish();
             return;
         }
-
         if (feed.itemType == Feed.TYPE_IMAGE_TEXT){
             viewHandler = new ImageViewHandler(this);
         }else {
