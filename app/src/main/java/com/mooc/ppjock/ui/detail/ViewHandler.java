@@ -6,6 +6,9 @@ import androidx.fragment.app.FragmentActivity;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.lifecycle.ViewModelProviders;
 
+import com.mooc.ppjock.databinding.LayoutFeedAuthorBindingImpl;
+import com.mooc.ppjock.model.Feed;
+
 public class ViewHandler {
 
     private final FragmentActivity mActivity;
@@ -16,7 +19,10 @@ public class ViewHandler {
         mDetailViewModel = ViewModelProviders.of(activity).get(FeedDetailViewModel.class);
     }
 
-    public void bindInitData() {
+    public void bindInitData(Feed feed) {
+    }
+    
+    private void showCommentDialog(){
     }
 
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
