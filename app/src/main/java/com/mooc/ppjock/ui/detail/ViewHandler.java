@@ -13,6 +13,7 @@ public class ViewHandler {
 
     private final FragmentActivity mActivity;
     private final FeedDetailViewModel mDetailViewModel;
+    private Feed mFeed;
 
     public ViewHandler(FragmentActivity activity) {
         mActivity = activity;
@@ -20,6 +21,7 @@ public class ViewHandler {
     }
 
     public void bindInitData(Feed feed) {
+
     }
     
     private void showCommentDialog(){
