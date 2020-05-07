@@ -2,13 +2,15 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android">
 
     <data>
+
         <variable
             name="feed"
             type="com.mooc.ppjock.model.Feed" />
-        
+
         <variable
             name="fullscreen"
             type="java.lang.Boolean" />
+
         <import type="android.view.View"></import>
 
         <import type="com.mooc.ppjock.ui.InteractionPresenter"></import>
@@ -25,14 +27,26 @@
         android:layout_width="match_parent"
         android:layout_height="48dp"
         android:layout_gravity="bottom"
-        android:background="">
+        android:background="@{fullscreen?@color/transparent:@color/color_white}"
+        android:orientation="vertical">
 
         <View
             android:layout_width="match_parent"
             android:layout_height="1px"
-            android:background="@color/color_divider">
+            android:background="@color/color_divider"
+            android:visibility="@{fullscreen?View.INVISIBLE:View.VISIBLE}"></View>
 
-        </View>
+        <TextView
+            android:id="@+id/input_view"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="@dimen/dp_16"
+            android:layout_marginTop="@dimen/dp_4"
+            android:layout_marginRight="@dimen/dp_16"
+            android:layout_marginBottom="@dimen/dp_4"
+            android:background="@drawable/bg_edit_view"
+
+            ></TextView>
 
     </LinearLayout>
 </layout>
