@@ -1,12 +1,10 @@
 package com.mooc.ppjock.ui.detail;
 
 import android.content.Intent;
+import android.os.AsyncTask;
 
 import androidx.fragment.app.FragmentActivity;
-import androidx.lifecycle.ViewModelProvider;
 import androidx.lifecycle.ViewModelProviders;
-
-import com.mooc.ppjock.databinding.LayoutFeedAuthorBindingImpl;
 import com.mooc.ppjock.model.Feed;
 
 public class ViewHandler {
