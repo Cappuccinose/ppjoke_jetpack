@@ -32,7 +32,7 @@ public class FeedDetailActivity extends AppCompatActivity {
         }else {
             viewHandler = new VideoViewHandler(this);
         }
-        viewHandler.bindInitData();
+        viewHandler.bindInitData(feed);
     }
 
     @Override
