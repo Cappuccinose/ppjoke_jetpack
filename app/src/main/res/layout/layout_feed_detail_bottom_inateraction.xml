@@ -46,12 +46,14 @@
             android:layout_marginBottom="@dimen/dp_4"
             android:layout_weight="4"
             android:background="@drawable/bg_edit_view"
-            android:layout_gravity="center_vertical"
-            android:hint="@string/feed_string"
+            android:gravity="center_vertical"
+            android:hint="@string/feed_detil_hint"
             android:paddingLeft="@dimen/dp_10"
-            android:textColor="@{fullscreen?@color/color_tran}"
+            android:textColor="@{fullscreen?@color/color_white:@color/color_333}"
+            android:textColorHint="@{fullscreen?@color/color_white:@color/color_333}"
+            android:textSize="12sp">
 
-            ></TextView>
+        </TextView>
 
     </LinearLayout>
 </layout>
