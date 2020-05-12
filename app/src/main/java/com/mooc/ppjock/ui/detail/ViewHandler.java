@@ -21,7 +21,7 @@ import com.mooc.ppjock.databinding.LayoutFeedDetailBottomInateractionBinding;
 import com.mooc.ppjock.model.Comment;
 import com.mooc.ppjock.model.Feed;
 
-public class ViewHandler {
+public abstract class ViewHandler {
     private final FeedDetailViewModel viewModel;
     protected FragmentActivity mActivity;
     protected Feed mFeed;
