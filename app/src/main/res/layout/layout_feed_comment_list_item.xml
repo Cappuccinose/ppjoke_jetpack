@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="comment"
+            type="com.mooc.ppjock.model.Comment" />
+
+        <import type="android.text.TextUtils"></import>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:paddingBottom="@dimen/dp_10">
+
+        <com.mooc.ppjock.view.PPImageView
+            android:id="@+id/author_avatar"
+            android:layout_width="@dimen/dp_40"
+            android:layout_height="@dimen/dp_40"
+            tools:ignore="MissingConstraints"
+            android:layout_marginLeft="@dimen/dp_16"
+            android:layout_marginTop="@dimen/dp_16"
+            app:image_url="@{comment.author.avatar}"
+            app:isCircle="@{true}"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:src="@drawable/splash"
+            >
+
+        </com.mooc.ppjock.view.PPImageView>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
