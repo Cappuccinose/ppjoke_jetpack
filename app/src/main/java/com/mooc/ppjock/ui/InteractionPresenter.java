@@ -1,5 +1,6 @@
 package com.mooc.ppjock.ui;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.text.TextUtils;
 import android.view.View;
@@ -18,6 +19,14 @@ import com.mooc.libcommon.global.AppGlobals;
 import com.mooc.libnetwork.ApiResponse;
 import com.mooc.libnetwork.ApiService;
 import com.mooc.libnetwork.JsonCallback;
+import com.mooc.ppjock.model.Comment;
+import com.mooc.ppjock.model.Feed;
+import com.mooc.ppjock.model.TagList;
+import com.mooc.ppjock.model.User;
+import com.mooc.ppjock.ui.login.UserManager;
+import com.mooc.ppjock.ui.share.ShareDialog;
+
+import org.jetbrains.annotations.NotNull;
 
 public class InteractionPresenter {
 
@@ -336,6 +345,7 @@ public class InteractionPresenter {
                 });
     }
 
+    @SuppressLint("RestrictedApi")
     private static void showToast(String message) {
         ArchTaskExecutor.getMainThreadExecutor().execute(new Runnable() {
             @Override
