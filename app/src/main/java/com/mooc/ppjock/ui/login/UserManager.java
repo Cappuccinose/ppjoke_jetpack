@@ -40,12 +40,12 @@ public class UserManager {
         }
     }
 
-//    public LiveData<User> login(Context context) {
-//        Intent intent = new Intent(context, LoginActivity.class);
-//        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-//        context.startActivity(intent);
-//        return userLiveData;
-//    }
+    public LiveData<User> login(Context context) {
+        Intent intent = new Intent(context, LoginActivity.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        context.startActivity(intent);
+        return userLiveData;
+    }
 
     public boolean isLogin() {
         return mUser == null ? false : mUser.expires_time > System.currentTimeMillis();
@@ -62,7 +62,7 @@ public class UserManager {
 
     public LiveData<User> refresh() {
         if (!isLogin()) {
-//            return login(AppGlobals.getApplication());
+            return login(AppGlobals.getApplication());
 
         }
         MutableLiveData<User> liveData = new MutableLiveData<>();
