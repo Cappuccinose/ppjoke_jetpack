@@ -63,6 +63,7 @@ public class UserManager {
     public LiveData<User> refresh() {
         if (!isLogin()) {
 //            return login(AppGlobals.getApplication());
+
         }
         MutableLiveData<User> liveData = new MutableLiveData<>();
         ApiService.get("/user/query")
