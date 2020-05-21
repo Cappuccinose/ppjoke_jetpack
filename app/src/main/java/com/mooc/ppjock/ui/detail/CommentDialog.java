@@ -34,6 +34,7 @@ import com.mooc.ppjock.R;
 import com.mooc.ppjock.databinding.LayoutCommentDialogBinding;
 import com.mooc.ppjock.model.Comment;
 import com.mooc.libcommon.dialog.LoadingDiaLog;
+import com.mooc.ppjock.ui.publish.CaptureActivity;
 
 
 import java.util.concurrent.atomic.AtomicInteger;
@@ -123,23 +124,23 @@ public class CommentDialog extends AppCompatDialogFragment implements View.OnCli
     @Override
     public void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-//        if (requestCode == CaptureActivity.REQ_CAPTURE && resultCode == Activity.RESULT_OK) {
-//            filePath = data.getStringExtra(CaptureActivity.RESULT_FILE_PATH);
-//            width = data.getIntExtra(CaptureActivity.RESULT_FILE_WIDTH, 0);
-//            height = data.getIntExtra(CaptureActivity.RESULT_FILE_HEIGHT, 0);
-//            isVideo = data.getBooleanExtra(CaptureActivity.RESULT_FILE_TYPE, false);
-//
-//            if (!TextUtils.isEmpty(filePath)) {
-//                mBinding.commentExtLayout.setVisibility(View.VISIBLE);
-//                mBinding.commentCover.setImageUrl(filePath);
-//                if (isVideo) {
-//                    mBinding.commentIconVideo.setVisibility(View.VISIBLE);
-//                }
-//            }
-//
-//            mBinding.commentVideo.setEnabled(false);
-//            mBinding.commentVideo.setAlpha(80);
-//        }
+        if (requestCode == CaptureActivity.REQ_CAPTURE && resultCode == Activity.RESULT_OK) {
+            filePath = data.getStringExtra(CaptureActivity.RESULT_FILE_PATH);
+            width = data.getIntExtra(CaptureActivity.RESULT_FILE_WIDTH, 0);
+            height = data.getIntExtra(CaptureActivity.RESULT_FILE_HEIGHT, 0);
+            isVideo = data.getBooleanExtra(CaptureActivity.RESULT_FILE_TYPE, false);
+
+            if (!TextUtils.isEmpty(filePath)) {
+                mBinding.commentExtLayout.setVisibility(View.VISIBLE);
+                mBinding.commentCover.setImageUrl(filePath);
+                if (isVideo) {
+                    mBinding.commentIconVideo.setVisibility(View.VISIBLE);
+                }
+            }
+
+            mBinding.commentVideo.setEnabled(false);
+            mBinding.commentVideo.setAlpha(80);
+        }
     }
 
     private void publishComment() {
