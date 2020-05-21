@@ -162,6 +162,7 @@ public class CommentDialog extends AppCompatDialogFragment implements View.OnCli
         }
     }
 
+    @SuppressLint("RestrictedApi")
     private void uploadFile(String coverPath, String filePath) {
         //AtomicInteger, CountDownLatch, CyclicBarrier
         showLoadingDialog();
